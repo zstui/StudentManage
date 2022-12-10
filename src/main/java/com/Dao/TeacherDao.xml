@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Dao.TeacherDao">
+    <insert id="insertTeacher" parameterType="Teacher">
+        insert into teacher(tid, tname, tnum, tsex, tage, tstatus, phone, address, email, pwd, pic)
+        values (#{tid},#{tname},#{tnum},#{tsex},#{tage},#{tstatus},#{phone},#{address},#{email},#{pwd},#{pic})
+    </insert>
+    <delete id="deleteTeacher" parameterType="Teacher">
+        delete from teacher where tid in
+        <foreach collection="list" open="(" close=")" item="obj" separator=",">
+        #{obj.tid}
+        </foreach>
+    </delete>
+</mapper>
