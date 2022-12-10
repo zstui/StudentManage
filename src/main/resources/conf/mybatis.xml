@@ -6,11 +6,11 @@
 <configuration>
     <!--设置别名-->
     <typeAliases>
-        <package name="com.entity"/>
+        <package name="com.Entity"/>
     </typeAliases>
 
     <!--设置mapper位置-->
     <mappers>
-        <package name="com.dao"/>
+        <package name="com.Dao"/>
     </mappers>
 </configuration>
